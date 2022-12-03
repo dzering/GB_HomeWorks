@@ -45,14 +45,14 @@ public class Unit : MonoBehaviour
     }
 
     IEnumerator ReceiveHealth()
-    {
+        {
         float startTime = Time.time;
         float counter = 0;
 
         _isReceiving = true;
 
         while (_isReceiving)
-        {
+            {
             counter += _waitingTime;
             _health += _receiveHealth;
             Debug.Log($"Count: {counter}");
@@ -62,16 +62,19 @@ public class Unit : MonoBehaviour
             {
                 _isReceiving = false;
             }
+            Debug.Log($"Health: {_health}");
 
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
 
             if (_health >= _maxHealth)
             {
                 _health = _maxHealth;
                 _isReceiving = false;
-            }
+    }
 
             Debug.Log($"Health: {_health}");
-           
+
             yield return new WaitForSecondsRealtime(_waitingTime);
         }
         Debug.Log(Time.time - startTime);
