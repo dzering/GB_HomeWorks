@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace Assets.Scripts
 {
-    public class Lesson2 : MonoBehaviour
+    public class Lesson2Task1 : MonoBehaviour
     {
         private NativeArray<int> _arr;
 
