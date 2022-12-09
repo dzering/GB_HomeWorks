@@ -8,8 +8,10 @@ public class TextField : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI textObject;
+
     [SerializeField]
     private Scrollbar scrollbar;
+
     private List<string> messages = new List<string>();
     private void Start()
     {
@@ -17,11 +19,14 @@ public class TextField : MonoBehaviour
     }
     public void ReceiveMessage(object message)
     {
-    messages.Add(message.ToString());
+
+        messages.Add(message.ToString());
         float value = (messages.Count - 1) * scrollbar.value;
         scrollbar.value = Mathf.Clamp(value, 0, 1);
+
         UpdateText();
     }
+
     private void UpdateText()
     {
         string text = "";

@@ -31,7 +31,7 @@ public class UIController : MonoBehaviour
     {
         buttonStartServer.onClick.AddListener(() => StartServer());
         buttonShutDownServer.onClick.AddListener(() => ShutDownServer());
-        buttonConnectClient.onClick.AddListener(() => Connect());
+        buttonConnectClient.onClick.AddListener(Connect);
         buttonDisconnectClient.onClick.AddListener(() => Disconnect());
         buttonSendMessage.onClick.AddListener(() => SendMessage());
         client.onMessageReceive += ReceiveMessage;
@@ -64,7 +64,7 @@ public class UIController : MonoBehaviour
     [System.Obsolete]
     private void SendMessage()
     {
-        client.SendMessages(inputField.text);
+        client.SendMessage(inputField.text);
         inputField.text = "";
     }
     public void ReceiveMessage(object message)
