@@ -4,6 +4,7 @@ Shader "Unlit/Plane"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Height ("Height", Range(0,2)) = 0.5
+        _PI("PI", float) = 3.1415926
     }
     SubShader
     {
@@ -36,12 +37,13 @@ Shader "Unlit/Plane"
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float _Height;
+            float _PI;
 
             v2f vert (appdata_ v)
             {
                 v2f o;
-               // v.vertex.y += _Height;
-                v.vertex.xyz += v.normal * _Height * (-v.uv.x * v.uv.x);
+
+                v.vertex.xyz += v.normal * _Height * sin(v.uv.x * _PI);
 
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);

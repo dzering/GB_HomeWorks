@@ -39,7 +39,7 @@ public class Glitch : MonoBehaviour
         IEnumerator Glitching()
         {
             _renderer.material.SetFloat("_Amount", 0.249f);
-            _renderer.material.SetFloat("_CutoutTresh", 0.250f);
+            _renderer.material.SetFloat("_CutoutTresh", 0.672f);
             _renderer.material.SetFloat("_Speed", Random.Range(1, 10));
             _renderer.material.SetFloat("_Amplitude", Random.Range(100, 250));
             yield return new WaitForSeconds(_glitchTime);

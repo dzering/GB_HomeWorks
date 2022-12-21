@@ -26,12 +26,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amount: 0.389
+    - _Amount: 0.2
     - _Amplitude: 100
-    - _CutoutTresh: 0.112
+    - _CutoutTresh: 0.724
     - _Distance: 0.2
     - _Speed: 5
     - _Transparancy: 0.5
     m_Colors:
-    - _TintColor: {r: 0.16290496, g: 0.1692396, b: 0.6037736, a: 0}
+    - _TintColor: {r: 0.6698113, g: 0.13585795, b: 0.5345588, a: 0}
   m_BuildTextureStacks: []
